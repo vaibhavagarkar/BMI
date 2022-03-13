@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>score keeper</title>
+    <script>
+        function IncA() {
+            var score=parseInt(document.getElementById("btnscoreA").innerHTML);
+            score++;
+            document.getElementById("btnscoreA").innerHTML=score;
+        }
+        function IncB() {
+            var score=parseInt(document.getElementById("btnscoreB").innerHTML);
+            score++;
+            document.getElementById("btnscoreB").innerHTML=score;
+        }
+        function DecB() {
+            var score=parseInt(document.getElementById("btnscoreB").innerHTML);
+            if (score>0) {
+                score--;
+            }
+            document.getElementById("btnscoreB").innerHTML=score;
+        }
+        function DecA() {
+            var score=parseInt(document.getElementById("btnscoreA").innerHTML);
+            if (score>0) {
+                score--;
+            }
+            document.getElementById("btnscoreA").innerHTML=score;
+        }
+    </script>
+    <style>
+        body {
+            background: url('ft.jpg');
+            background-size: 100% 100%;
+            height: 100vh;
+            /* width: 100vw; */
+        }
+
+        .container {
+
+            /* background-color: white; */
+            /* opacity: 0.5; */
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .child-container {
+        
+            background: url('Flag_of_India.png');
+            background-size: 100% 100%;
+           
+            width: 250px;
+            height: 250px;
+            border: 2px solid black;
+            border-radius: 10px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            box-shadow: 0px 0px 18px hsl(74, 74%, 82%);
+            transition: 0.5s;
+        }
+
+        .child-container:hover{
+            
+            width: 280px;
+            height: 280px;
+            transform: 0.3;
+            box-shadow: 0px 0px 8px rgb(230, 232, 236);
+            
+        }
+        .child-container1 {
+            background: url('england.png');
+            background-size: 100% 100%;
+            width: 250px;
+            height:250px;
+            border: 2px solid black;
+            border-radius: 10px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            box-shadow: 0px 0px 18px rgb(235, 240, 230);
+        }
+        .child-container1:hover{
+            
+            width: 280px;
+            height: 280px;
+            transform: 0.3;
+            box-shadow: 0px 0px 8px rgb(24, 103, 250);
+            
+        }
+        .heading {
+            text-align: center;
+
+        }
+        .btn{
+            width: 60px;
+            height: 30px;
+            background-color:aliceblue;
+            border-radius: 5px;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            
+            
+        }
+        .btn:hover{
+            cursor: pointer;
+            box-shadow:0px 0px 5px rgb(233, 16, 70);
+
+        }
+        .sco{
+            text-align: center;
+            font-size: 25px;
+        }
+        .app-class{
+            background-color: rgb(13, 74, 167);
+            color: aliceblue;
+            text-align: center;
+            border-radius: 25px;
+        }
+        #btnDecB{
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+  <h1 class="app-class">Score Card</h1>
+    <div class="container">
+        <div class="child-container">
+            <h2 class="heading" style="color:rgb(75, 78, 226)">Bharat</h2>
+            <button id="btnIncA" class="btn" onclick="IncA();">+</button>
+            <h3 id="btnscoreA" class="sco" style="color:rgb(13, 228, 243)">0</h3>
+            <button id="btnDecA" class="btn" onclick="DecA();">-</button>
+        </div>
+       
+        <div class="child-container1">
+            <h2 class="heading" style="color:rgb(100, 253, 245)">England</h2>
+            <button id="btnIncB" class="btn" onclick="IncB();">+</button>
+            <h3 id="btnscoreB" class="sco">0</h3>
+            <button id="btnDecB" class="btn" onclick="DecB();">-</button>
+        </div>
+    </div>
+</body>
+
+</html>
